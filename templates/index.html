@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="no">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            display: flex;
+            flex-direction: column;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        #ramme {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+        }
+
+        #ramme img {
+            width: 100%;
+        }
+
+        form {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <form action="/" method="post">
+            <input type="text" placeholder="bildetekst" name="tekst">
+            <button type="submit">Generer bilde</button>
+        </form>
+        <h1>{{tekst}}</h1>
+        <div id="ramme">
+            {% for bilde in bilder %}
+            <img src="{{bilde}}" alt="">
+            {% endfor %}
+        </div>
+    </main>
+</body>
+
+</html>
